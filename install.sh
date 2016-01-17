@@ -52,8 +52,8 @@ mkdir -p /www/sites/waq2016-web /www/conf/waq2016-web /www/logs/waq2016-web
 mkdir /usr/share/nginx/cache
 
 # Download nginx confs
-wget -O /www/conf/waq2016-api/nginx.conf https://raw.githubusercontent.com/webaquebec/webaquebec2016-api/conf/nginx.conf
-wget -O /www/conf/waq2016-web/nginx.conf https://raw.githubusercontent.com/webaquebec/webaquebec2016-web/conf/nginx.conf
+wget -O /www/conf/waq2016-api/nginx.conf https://raw.githubusercontent.com/webaquebec/webaquebec2016-api/master/conf/nginx.conf
+wget -O /www/conf/waq2016-web/nginx.conf https://raw.githubusercontent.com/webaquebec/webaquebec2016-web/master/conf/nginx.conf
 
 # Remove default and put WAQ conf
 unlink /etc/nginx/sites-enabled/default
@@ -62,7 +62,7 @@ ln -s /www/conf/waq2016-web/nginx.conf /etc/nginx/sites-enabled/99-waq2016-web
 
 rm /etc/update-motd.d/99-install-not-finished
 
-wget -O /tmp/start.sh https://raw.githubusercontent.com/webaquebec/webaquebec2016-scripts/master/scripts/start.sh
+wget -O /tmp/start.sh https://raw.githubusercontent.com/webaquebec/webaquebec2016-scripts/master/start.sh
 chmod +x /tmp/start.sh
 
 echo "$ROOTDBPASSWD" > '/www/conf/waq2016-api/ROOTDBPASSWD'
