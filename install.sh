@@ -57,15 +57,16 @@ wget -O /www/conf/waq2016-web/nginx.conf https://raw.githubusercontent.com/webaq
 
 # Remove default and put WAQ conf
 unlink /etc/nginx/sites-enabled/default
-ln -s /www/conf/waq2016/nginx.conf /etc/nginx/sites-enabled/99-waq2016
+ln -s /www/conf/waq2016-api/nginx.conf /etc/nginx/sites-enabled/98-waq201api
+ln -s /www/conf/waq2016-web/nginx.conf /etc/nginx/sites-enabled/99-waq2016-web
 
 rm /etc/update-motd.d/99-install-not-finished
 
 wget -O /tmp/start.sh https://raw.githubusercontent.com/webaquebec/webaquebec2016-scripts/master/scripts/start.sh
 chmod +x /tmp/start.sh
 
-echo "$ROOTDBPASSWD" > '/www/conf/waq2016/ROOTDBPASSWD'
+echo "$ROOTDBPASSWD" > '/www/conf/waq2016-api/ROOTDBPASSWD'
 echo "Install has been completed."
 echo "You can run /tmp/start.sh to install base project if not using deploys."
-echo "Root MYSQL password has been written to /www/conf/waq2016/ROOTDBPASSWD."
+echo "Root MYSQL password has been written to /www/conf/waq2016-api/ROOTDBPASSWD."
 echo "Please change it and delete this file after running start script."
