@@ -45,6 +45,9 @@ git clone https://github.com/webaquebec/webaquebec2016-web.git /www/sites/waq201
 cd /www/sites/waq2016-web
 npm install
 npm run compile_assets
+npm run sass
+npm run lint
+npm run build
 
 service php5-fpm restart
 service nginx restart
