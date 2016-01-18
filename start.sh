@@ -6,7 +6,6 @@ echo "$WPDBPASSWD" > '/www/conf/waq2016-api/WPDBPASSWD'
 
 # Clone project
 git clone https://github.com/webaquebec/webaquebec2016-api.git /www/sites/waq2016-api
-git clone https://github.com/webaquebec/webaquebec2016-web.git /www/sites/waq2016-web
 
 # Install & Run composer
 cd /www/sites/waq2016-api
@@ -39,5 +38,11 @@ define('WP_DEBUG', true);"
 echo "$ENVFILE" > '/www/sites/waq2016-api/public/env.php'
 
 chown -R www-data:www-data /www/sites/waq2016-api/public/
+
+# Clone project
+git clone https://github.com/webaquebec/webaquebec2016-web.git /www/sites/waq2016-web
+
+cd /www/sites/waq2016-web
+
 service php5-fpm restart
 service nginx restart
