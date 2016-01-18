@@ -43,6 +43,8 @@ chown -R www-data:www-data /www/sites/waq2016-api/public/
 git clone https://github.com/webaquebec/webaquebec2016-web.git /www/sites/waq2016-web
 
 cd /www/sites/waq2016-web
+npm install
+npm run compile_assets
 
 service php5-fpm restart
 service nginx restart

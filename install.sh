@@ -42,7 +42,9 @@ mysql -uroot -p$ROOTDBPASSWD -e "DELETE FROM mysql.db WHERE Db='test' OR Db='tes
 mysql -uroot -p$ROOTDBPASSWD -e "FLUSH PRIVILEGES"
 
 # Install other Requirements
-apt-get -y install php5-mysql php5-cli php5-gd curl git npm
+apt-get -y install php5-mysql php5-cli php5-gd curl git npm ruby
+ln -s /usr/bin/nodejs /usr/bin/node
+gem install sass
 
 # Create project folders
 mkdir -p /www/sites/waq2016-api /www/conf/waq2016-api /www/logs/waq2016-api
